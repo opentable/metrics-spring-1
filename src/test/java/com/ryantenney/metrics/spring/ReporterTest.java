@@ -32,11 +32,9 @@ import com.codahale.metrics.SharedMetricRegistries;
 import com.codahale.metrics.Slf4jReporter;
 import com.codahale.metrics.graphite.GraphiteReporter;
 import com.codahale.metrics.jmx.JmxReporter;
-import com.palominolabs.metrics.newrelic.NewRelicReporter;
 import com.ryantenney.metrics.spring.reporter.FakeReporter;
 import com.ryantenney.metrics.spring.reporter.MetricPrefixSupplier;
 
-import org.coursera.metrics.datadog.DatadogReporter;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.aop.support.AopUtils;
@@ -121,8 +119,8 @@ public class ReporterTest {
 			Assert.assertNotNull(ctx.getBean(JmxReporter.class));
 			Assert.assertNotNull(ctx.getBean(Slf4jReporter.class));
 			//Assert.assertNotNull(ctx.getBean(GangliaReporter.class));
-			Assert.assertNotNull(ctx.getBean(NewRelicReporter.class));
-			Assert.assertNotNull(ctx.getBean(DatadogReporter.class));
+			//Assert.assertNotNull(ctx.getBean(NewRelicReporter.class));
+			//Assert.assertNotNull(ctx.getBean(DatadogReporter.class));
 
 			Assert.assertNotNull(ctx.getBean("graphite", GraphiteReporter.class));
 			Assert.assertNotNull(ctx.getBean("graphite-tcp", GraphiteReporter.class));
