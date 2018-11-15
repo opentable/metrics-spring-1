@@ -1,3 +1,4 @@
+# FORK
 Note: Opentable fork of the apparently abandoned Ryan Tenney base project
 
 This was branched off v3.1-maintenance, and the "ForkBase" is what should be considered master.
@@ -6,14 +7,10 @@ Versioning Rules:
 
 First release is 3.9.9
 Next is 3.9.9.1
-etc
+etc. See the CHANGELOG for more!
 
 
 # Metrics for Spring
-
-[![Build Status](https://img.shields.io/travis/ryantenney/metrics-spring/master.svg?style=flat-square)](https://travis-ci.org/ryantenney/metrics-spring)
-![Maven Central](https://img.shields.io/maven-central/v/com.ryantenney.metrics/metrics-spring.svg?style=flat-square)
-![GitHub license](https://img.shields.io/github/license/ryantenney/metrics-spring.svg?style=flat-square)
 
 ## About
 
@@ -30,7 +27,7 @@ This module does the following:
 
 ### Maven
 
-Current version is 3.9.9, which is compatible with Metrics 4.0.2
+Current version is 3.9.9, which is compatible with Metrics 4.0.3
 
 ```xml
 <dependency>
