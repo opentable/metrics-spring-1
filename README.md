@@ -1,3 +1,14 @@
+Note: Opentable fork of the apparently abandoned Ryan Tenney base project
+
+This was branched off v3.1-maintenance, and the "ForkBase" is what should be considered master.
+
+Versioning Rules:
+
+First release is 3.9.9
+Next is 3.9.9.1
+etc
+
+
 # Metrics for Spring
 
 [![Build Status](https://img.shields.io/travis/ryantenney/metrics-spring/master.svg?style=flat-square)](https://travis-ci.org/ryantenney/metrics-spring)
