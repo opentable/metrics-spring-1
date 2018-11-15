@@ -15,12 +15,12 @@
  */
 package com.ryantenney.metrics.spring;
 
+import com.codahale.metrics.SharedMetricRegistries;
+
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-
-import com.codahale.metrics.SharedMetricRegistries;
 
 @RunWith(Suite.class)
 // @formatter:off
@@ -37,7 +37,6 @@ import com.codahale.metrics.SharedMetricRegistries;
 		MetricAnnotationTest.class,
 		ProxyTargetClassTest.class,
 		RegistryTest.class,
-		ReporterTest.class,
 		SharedRegistryTest.class
 	})
 // @formatter:on
