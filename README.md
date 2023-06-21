@@ -1,5 +1,5 @@
 # FORK
-Note: Opentable fork of the apparently abandoned Ryan Tenney base project
+Note: Opentable fork of the apparently abandoned Ryan Tenney base project 
 
 This was branched off v3.1-maintenance, and the "ForkBase" is what should be considered master.
 
