@@ -85,7 +85,7 @@
 		</xsd:complexType>
 	</xsd:element>
 
-	<xsd:element name="reporter">
+	 <xsd:element name="reporter">
 		<xsd:annotation>
 			<xsd:appinfo>
 				<tool:annotation>

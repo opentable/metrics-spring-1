@@ -25,7 +25,7 @@ import static com.ryantenney.metrics.spring.TestUtil.forTimedMethod;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

@@ -452,7 +452,7 @@ public class MeteredClassTest {
 		@ExceptionMetered(cause = BogusException.class)
 		public <T extends Throwable> void exceptionMeteredMethod(Class<T> clazz) throws Throwable {
 			if (clazz != null) {
-				throw clazz.newInstance();
+				throw clazz.getDeclaredConstructor().newInstance();
 			}
 		}
 
@@ -492,14 +492,14 @@ public class MeteredClassTest {
 		@ExceptionMetered(name = "overloaded-exception-metered", cause = BogusException.class)
 		public <T extends Throwable> void overloadedExceptionMeteredMethod(Class<T> clazz) throws Throwable {
 			if (clazz != null) {
-				throw clazz.newInstance();
+				throw clazz.getDeclaredConstructor().newInstance();
 			}
 		}
 
 		@ExceptionMetered(name = "overloaded-exception-metered-param", cause = BogusException.class)
 		public <T extends Throwable> void overloadedExceptionMeteredMethod(Class<T> clazz, int param) throws Throwable {
 			if (clazz != null) {
-				throw clazz.newInstance();
+				throw clazz.getDeclaredConstructor().newInstance();
 			}
 		}
 
