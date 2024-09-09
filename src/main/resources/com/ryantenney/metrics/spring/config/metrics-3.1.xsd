@@ -103,7 +103,7 @@
 				<xsd:annotation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<expected-type type="com.codahale.metrics.MetricRegistry"/>
+							<tool:expected-type type="com.codahale.metrics.MetricRegistry"/>
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -117,7 +117,7 @@
 		<xsd:annotation>
 			<xsd:appinfo>
 				<tool:annotation>
-					<exports identifier="@id"/>
+					<tool:exports identifier="@id"/>
 				</tool:annotation>
 			</xsd:appinfo>
 		</xsd:annotation>
@@ -129,7 +129,7 @@
 				<xsd:annotation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<expected-type type="com.codahale.metrics.MetricRegistry"/>
+							<tool:expected-type type="com.codahale.metrics.MetricRegistry"/>
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
