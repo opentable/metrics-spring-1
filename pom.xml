@@ -59,14 +59,12 @@
 		<hamcrest.version>2.2</hamcrest.version>
 		<junit.version>4.13.1</junit.version>
 		<mockito.version>5.11.0</mockito.version>
-		<servlet.version>6.0.0</servlet.version>
 		<jackson.version>2.17.2</jackson.version>
 		<caliper.version>1.0-beta-2</caliper.version>
 
-		<plugin.bundle.version>3.5.0</plugin.bundle.version>
-		<plugin.lifecyclemapping.version>1.0.0</plugin.lifecyclemapping.version>
+		<plugin.lifecyclemapping.version>1.0.1</plugin.lifecyclemapping.version>
 		<plugin.surefire.version>3.5.0</plugin.surefire.version>
-		<plugin.source.version>3.0.1</plugin.source.version>
+		<plugin.source.version>3.3.1</plugin.source.version>
 		<plugin.javadoc.version>3.1.0</plugin.javadoc.version>
 		<plugin.license.version>4.5</plugin.license.version>
 		<plugin.release.version>3.1.1</plugin.release.version>
@@ -101,11 +99,6 @@
 			</dependency>
 			<dependency>
 				<groupId>io.dropwizard.metrics</groupId>
-				<artifactId>metrics-servlets</artifactId>
-				<version>${metrics.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.dropwizard.metrics</groupId>
 				<artifactId>metrics-jmx</artifactId>
 				<version>${metrics.version}</version>
 			</dependency>
@@ -113,6 +106,12 @@
 				<groupId>io.dropwizard.metrics</groupId>
 				<artifactId>metrics-graphite</artifactId>
 				<version>${metrics.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.rabbitmq</groupId>
+						<artifactId>amqp-client</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<!-- transitively through metrics-core and elasticsearch - make them converge -->
 			<dependency>
@@ -211,17 +210,6 @@
 			<artifactId>metrics-graphite</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>io.dropwizard.metrics</groupId>
-			<artifactId>metrics-servlets</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.servlet</groupId>
-			<artifactId>jakarta.servlet-api</artifactId>
-			<version>${servlet.version}</version>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- Test scope only -->
 		<dependency>
@@ -282,26 +270,6 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.apache.felix</groupId>
-					<artifactId>maven-bundle-plugin</artifactId>
-					<version>${plugin.bundle.version}</version>
-					<extensions>true</extensions>
-					<configuration>
-						<instructions>
-							<Import-Package><![CDATA[org.springframework.cglib.core,
-							org.springframework.cglib.proxy,
-							org.springframework.cglib.reflect,
-							javax.servlet;version="[3.0,4)";resolution:=optional,
-							*]]></Import-Package>
-							<Require-Capability><![CDATA[osgi.extender;
-							filter:="(|(osgi.extender=osgi.serviceloader.registrar)(osgi.extender=osgi.serviceloader.processor))",
-							osgi.serviceloader;filter:=(osgi.serviceloader=com.ryantenney.metrics.spring.reporter.ReporterElementParser);cardinality:=multiple]]></Require-Capability>
-							<Provide-Capability><![CDATA[osgi.serviceloader;
-							osgi.serviceloader=com.ryantenney.metrics.spring.reporter.ReporterElementParser]]></Provide-Capability>
-						</instructions>
-					</configuration>
-				</plugin>
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>

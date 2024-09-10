@@ -22,12 +22,10 @@ import javax.net.SocketFactory;
 
 import com.codahale.metrics.Clock;
 import com.codahale.metrics.graphite.Graphite;
-import com.codahale.metrics.graphite.GraphiteRabbitMQ;
 import com.codahale.metrics.graphite.GraphiteReporter;
 import com.codahale.metrics.graphite.GraphiteSender;
 import com.codahale.metrics.graphite.GraphiteUDP;
 import com.codahale.metrics.graphite.PickledGraphite;
-import com.rabbitmq.client.ConnectionFactory;
 
 public class GraphiteReporterFactoryBean extends AbstractScheduledReporterFactoryBean<GraphiteReporter> {
 
@@ -80,9 +78,10 @@ public class GraphiteReporterFactoryBean extends AbstractScheduledReporterFactor
 		final GraphiteSender graphite;
 
 		if ("rabbitmq".equals(transport)) {
-			ConnectionFactory connectionFactory = getPropertyRef(CONNECTION_FACTORY_REF, ConnectionFactory.class);
-			String exchange = getProperty(EXCHANGE);
-			graphite = new GraphiteRabbitMQ(connectionFactory, exchange);
+			throw new IllegalArgumentException("RabbitMQ transport not supported in this version");
+//			ConnectionFactory connectionFactory = getPropertyRef(CONNECTION_FACTORY_REF, ConnectionFactory.class);
+//			String exchange = getProperty(EXCHANGE);
+//			graphite = new GraphiteRabbitMQ(connectionFactory, exchange);
 		}
 		else {
 			final String hostname = getProperty(HOST);
