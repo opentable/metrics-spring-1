@@ -60,7 +60,7 @@
 		<junit.version>4.13.1</junit.version>
 		<mockito.version>5.11.0</mockito.version>
 		<jackson.version>2.17.2</jackson.version>
-		<caliper.version>1.0-beta-2</caliper.version>
+		<caliper.version>1.0-beta-3</caliper.version>
 
 		<plugin.lifecyclemapping.version>1.0.1</plugin.lifecyclemapping.version>
 		<plugin.surefire.version>3.5.0</plugin.surefire.version>
