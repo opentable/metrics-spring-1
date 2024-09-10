@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2012 Ryan W Tenney (ryan@10e.us)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ryantenney.metrics</groupId>
@@ -23,9 +40,6 @@
 			<timezone>-5</timezone>
 		</developer>
 	</developers>
-	<prerequisites>
-		<maven>3.8.4</maven>
-	</prerequisites>
 	<scm>
 		<connection>scm:git:git://github.com/opentable/metrics-spring-1.git</connection>
 		<developerConnection>scm:git:git@github.com:opentable/metrics-spring-1.git</developerConnection>
@@ -47,19 +61,15 @@
 		<mockito.version>5.11.0</mockito.version>
 		<servlet.version>6.0.0</servlet.version>
 		<jackson.version>2.17.2</jackson.version>
-		<java-version>1.8</java-version>
 		<caliper.version>1.0-beta-2</caliper.version>
 
 		<plugin.bundle.version>3.5.0</plugin.bundle.version>
 		<plugin.lifecyclemapping.version>1.0.0</plugin.lifecyclemapping.version>
-		<plugin.surefire.version>2.22.1</plugin.surefire.version>
+		<plugin.surefire.version>3.5.0</plugin.surefire.version>
 		<plugin.source.version>3.0.1</plugin.source.version>
-		<plugin.javadoc.version>3.0.1</plugin.javadoc.version>
-		<plugin.license.version>3.0</plugin.license.version>
-		<plugin.release.version>2.5.3</plugin.release.version>
-		<plugin.nexus.version>1.9.2.1</plugin.nexus.version>
-		<plugin.enforcer.version>3.0.0-M2</plugin.enforcer.version>
-		<plugin.site.version>3.7.1</plugin.site.version>
+		<plugin.javadoc.version>3.1.0</plugin.javadoc.version>
+		<plugin.license.version>4.5</plugin.license.version>
+		<plugin.release.version>3.1.1</plugin.release.version>
 		<plugin.gpg.version>3.1.0</plugin.gpg.version>
 	</properties>
 	<dependencyManagement>
@@ -371,18 +381,24 @@
 					</execution>
 				</executions>
 				<configuration>
-					<header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
 					<properties>
 						<owner>Ryan W Tenney</owner>
 						<email>ryan@10e.us</email>
+						<year>2012</year>
 					</properties>
-					<includes>
-						<include>src/**/*.java</include>
-					</includes>
-					<excludes>
-						<exclude>src/*/resources/**/*.xml</exclude>
-						<exclude>src/*/resources/**/*.xsd</exclude>
-					</excludes>
+					<licenseSets>
+						<licenseSet>
+							<header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+							<includes>
+								<include>src/**/*.java</include>
+							</includes>
+							<excludes>
+								<exclude>src/*/resources/**/*.xml</exclude>
+								<exclude>src/*/resources/**/*.xsd</exclude>
+							</excludes>
+						</licenseSet>
+					</licenseSets>
+
 				</configuration>
 			</plugin>
 			<plugin>

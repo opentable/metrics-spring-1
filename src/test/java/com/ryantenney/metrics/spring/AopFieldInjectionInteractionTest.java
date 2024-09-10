@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright © 2012 Ryan W Tenney (ryan@10e.us)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
